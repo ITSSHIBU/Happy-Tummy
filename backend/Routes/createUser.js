@@ -44,6 +44,7 @@ router.post('/loginuser' , [
         }
         let email = req.body.email
     try {
+        console.log("Email",email)
        let userdata = await user.findOne({email})
        if(!userdata){
         return res.status(400).json({errors:'Try login with correct credentials'});
