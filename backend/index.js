@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 4000
+const PORT = process.env.PORT ? process.env.PORT : 4000
 const mongodb = require('./db')
 
 app.use((req,res,next)=>{
@@ -20,6 +20,6 @@ app.use('/api', require("./Routes/getlocation"))
 app.get('/', (req,res)=>{
     res.send('Hello world')
 })
-app.listen(port,()=>{
-    console.log(`app listening on port ${port}`)
+app.listen(PORT,()=>{
+    console.log(`app listening on port ${PORT}`)
 })

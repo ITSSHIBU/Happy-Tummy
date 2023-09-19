@@ -45,8 +45,9 @@ export default function Cart() {
     console.log("JSON RESPONSE:::::", response.status)
     if (response.status === 200) {
       dispatch({ type: "DROP" })
-      naviagte('/')
+      
     }
+    naviagte('/')
   }
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0)
